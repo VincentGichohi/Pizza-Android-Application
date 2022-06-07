@@ -1,9 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, SafeAreaView, Image } from 'react-native';
+import ListView from "./src/screens/components/list_view";
+
 
 export default function App() {
     const mytext = "by ProgramWithUs"
-    return ( <View style = { styles.container } >
+    return ( <SafeAreaView style = { styles.container } >
         <StatusBar style = "auto" />
         <Image
         style={styles.pizzaImage}
@@ -13,7 +15,8 @@ export default function App() {
         />
         <Text style = { styles.baseText } > Pizza vs.Pizza App </Text>
         <Text style = {styles.newText}>{mytext}</Text>
-        </View>
+        <ListView/>
+        </SafeAreaView>
     );
 }
 
