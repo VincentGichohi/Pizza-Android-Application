@@ -1,24 +1,28 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, SafeAreaView, Image } from 'react-native';
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
 import ListView from "./src/screens/components/list_view";
+import DetailView from "./src/screens/components/detail_view";
+import ScreenA from "./src/screens/drawer/screenA.js";
+import ScreenB from "./src/screens/drawer/screenB.js";
+import ScreenC from "./srd/screens/drawer/screenC.js";
+import { createDrawerNavigator } from "@react-navigation/drawer";
 
+const Drawer = createDrawerNavigator();
+const Stack = createStackNavigator();
 
 export default function App() {
-    const mytext = "by ProgramWithUs"
-    return ( <SafeAreaView style = { styles.container } >
-        <StatusBar style = "auto" />
-        <Image
-        style={styles.pizzaImage}
-        source={{
-        uri: "https://cdn.pixabay.com/photo/2017/12/05/20/10/pizza-3000285_960_720.png",
-        }}
-        />
-        <Text style = { styles.baseText } > Pizza vs.Pizza App </Text>
-        <Text style = {styles.newText}>{mytext}</Text>
-        <ListView/>
-        </SafeAreaView>
+    return(
+        <NavigationContainer>
+        <Stack.Navigator>
+            <Stack.Screen name="Home" component={ListView} />
+            <Stack.Screen name="Detail" component={DetailView} />
+            </Stack.Navigator>
+        </NavigationContainer>
     );
 }
+
 
 const styles = StyleSheet.create({
     container: {
@@ -26,17 +30,5 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: 'center',
-    },
-    baseText: {
-        color: "navy",
-        fontSize: 30,
-        fontStyle: "italic",
-    },
-    newText: {
-        color: "red",
-    },
-    pizzaImage: {
-        width: 200,
-        height: 200,
     },
 });
