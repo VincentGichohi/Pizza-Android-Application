@@ -1,12 +1,17 @@
 
 import React, { Component } from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, Text, Button } from 'react-native';
+import { connect } from 'react';
 
 class DetailView extends Component {
     render() {
         return (
         <View style={styles.center}>
         <Text style={styles.title}>Detail View</Text>
+        <Button
+        title="Click for Tabs"
+        onPress={() => this.props.navigation.navigate("Tabs")}
+        />
         </View>
         );
     }
