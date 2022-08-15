@@ -26,13 +26,11 @@ renderTabComponents = () => {
         /> <
         Tab.Screen name = "tab 2"
         component = { TabTwo }
-        /> <
-        /Tab.Navigator>
+        /> </Tab.Navigator>
     );
 };
 
-renderScreenComponents = () => ( <
-    Stack.Navigator >
+renderScreenComponents = () => ( <Stack.Navigator >
     <
     Stack.Screen name = "Home"
     component = { ListView }
@@ -42,8 +40,7 @@ renderScreenComponents = () => ( <
     /> <
     Stack.Screen name = "Tabs"
     children = { this.renderTabComponents }
-    /> <
-    /Stack.Navigator>
+    /> </Stack.Navigator>
 );
 
 
