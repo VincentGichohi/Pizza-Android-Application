@@ -45,10 +45,8 @@ renderScreenComponents = () => ( <Stack.Navigator >
 
 
 export default function App() {
-    return ( <
-        NavigationContainer >
-        <
-        Drawer.Navigator >
+    return ( <NavigationContainer >
+        <Drawer.Navigator >
         <
         Drawer.Screen name = "Home"
         children = { this.renderScreenComponents }
@@ -60,10 +58,9 @@ export default function App() {
         component = { ScreenB }
         /> <
         Drawer.Screen name = "Screen C"
-        component = { ScreenC }
-        /> <
-        /Drawer.Navigator> <
-        /NavigationContainer>
+        component = { ScreenC }/> 
+        </Drawer.Navigator> 
+        </NavigationContainer>
     );
 }
 
